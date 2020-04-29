@@ -1,0 +1,21 @@
+{
+  "name": "praca-zdalna-it-job-board",
+  "version": "1.0.0",
+  "description": "A job board page that which contains remote jobs in IT sector.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "server": "nodemon index.js",
+    "client": "npm run start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "author": "m-ossolinski",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^5.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.10",
+    "node-sass": "^4.14.0",
+    "nodemon": "^2.0.3"
+  }
+}
