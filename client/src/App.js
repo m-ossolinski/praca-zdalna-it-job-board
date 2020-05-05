@@ -1,58 +1,17 @@
-import React  from 'react';
-import { connect } from 'react-redux';
-import * as actions from './actions';
+import React from 'react';
+import { AuthUserHook } from './hooks';
 
-class App extends React.Component {
-  componentDidMount() {
-    this.props.fetchUser();
-  }
+export const App = () => {
 
-  renderContent() {
-    switch (this.props.auth) {
-      case null:
-        return;
+  const { isUserAuthorized } = AuthUserHook();
 
-      case false:
-        return (
-          <li>
-            <a href="/auth/google">
-              Login with google
-            </a
-            ></li>
-        );
+  return (
+    <div className="App">
+      praca-zdalna.it - job board
 
-      default:
-        return (
-          <>
-            <li>
-              payments
-            </li>
-            <li style={{ margin: '0 10px' }}>
-              Credits: 1
-            </li>
-            <li>
-              <a href="/api/logout">
-                Logout
-              </a
-              >
-            </li>
-          </>
-        );
-    }
-  }
-
-  render() {
-    return (
-      <div className="App">
-        {this.renderContent()}
-        praca-zdalna.it - job board
-      </div>
-    );
-  }
+      <h2>{isUserAuthorized ? 'qwe' : 'abc'}</h2>
+    </div>
+  )
 }
 
-function mapStateToProps({ auth }) {
-  return { auth }
-}
-
-export default connect(mapStateToProps, actions)(App);
+export default App;
