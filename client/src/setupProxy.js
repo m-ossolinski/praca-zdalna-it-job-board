@@ -8,4 +8,11 @@ module.exports = function(app) {
       changeOrigin: true,
     })
   );
+
+  app.use(
+    '/auth/google',
+    createProxyMiddleware({
+      target: 'http://localhost:5000',
+    })
+  );
 };
