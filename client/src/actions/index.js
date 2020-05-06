@@ -1,8 +1,14 @@
 import axios from 'axios';
-import { FETCH_USER } from "./actionTypes";
+import { FETCH_USER, FETCH_USER_FAILED, FETCH_USER_SUCCESSFUL } from "./actionTypes";
 
 export const fetchUser = () => async dispatch => {
-  const { data } = await axios.get('/api/current_user');
+  dispatch({ type: FETCH_USER });
 
-  dispatch({ type: FETCH_USER, payload: data });
+  try {
+    const { data } = await axios.get('/api/current_user');
+
+    dispatch({ type: FETCH_USER_SUCCESSFUL, payload: data });
+  } catch (err) {
+    dispatch({ type: FETCH_USER_FAILED })
+  }
 };

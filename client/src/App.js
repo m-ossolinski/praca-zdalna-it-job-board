@@ -3,13 +3,18 @@ import { AuthUserHook } from './hooks';
 
 export const App = () => {
 
-  const { isUserAuthorized } = AuthUserHook();
+  const { isUserLoggedIn } = AuthUserHook();
 
   return (
     <div className="App">
       praca-zdalna.it - job board
 
-      <h2>{isUserAuthorized ? 'qwe' : 'abc'}</h2>
+      {isUserLoggedIn ? (
+        <a href="/api/logout">Logout</a>
+      ): (
+        <a href="/auth/google">Login with Google+</a>
+      )}
+
     </div>
   )
 }

@@ -20,6 +20,11 @@ module.exports = app => {
   });
 
   app.get('/api/current_user', (req, res) => {
+
+    if (!req.user) {
+      res.status(401)
+    }
+
     res.send(req.user);
   });
 }
