@@ -1,17 +1,22 @@
-import React  from 'react';
+import React from 'react';
+import { AuthUserHook } from './hooks';
 
-function App() {
+export const App = () => {
+
+  const { isUserLoggedIn } = AuthUserHook();
+
   return (
     <div className="App">
       praca-zdalna.it - job board
-      <a
-        href="/auth/google"
-        style={{ background: 'red', padding: '10px' }}
-      >
-        login
-      </a>
+
+      {isUserLoggedIn ? (
+        <a href="/api/logout">Logout</a>
+      ): (
+        <a href="/auth/google">Login with Google+</a>
+      )}
+
     </div>
-  );
+  )
 }
 
 export default App;
