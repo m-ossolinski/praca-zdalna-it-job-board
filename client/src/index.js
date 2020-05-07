@@ -6,15 +6,18 @@ import reduxThunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import reducers from './reducers';
 import './index.css';
-import App from './App';
+import App from './components/App';
 import * as serviceWorker from './serviceWorker';
+import AuthContext from "./contexts/AuthContext";
 
 const store = createStore(reducers, {}, composeWithDevTools(applyMiddleware(reduxThunk)));
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <AuthContext>
+        <App />
+      </AuthContext>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')

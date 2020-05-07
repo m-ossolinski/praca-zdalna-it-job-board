@@ -1,0 +1,11 @@
+.app-navigation {
+  justify-content: flex-end;
+  align-content: center;
+
+  &-item {
+    background: greenyellow;
+    padding: 14px;
+    margin: 0 6px;
+    text-decoration: none;
+  }
+}

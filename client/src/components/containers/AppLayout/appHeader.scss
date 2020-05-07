@@ -1,0 +1,9 @@
+.app-header {
+  display: grid;
+  grid-template-columns: 200px auto;
+
+  &-nav {
+    display: flex;
+    justify-self: flex-end;
+  }
+}
