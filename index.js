@@ -5,8 +5,8 @@ const passport = require('passport');
 const authRoutes = require('./routes/authenticationRoutes');
 const offerRoutes = require('./routes/offerRoutes');
 const { mongoURI, cookieKey } = require('./config/keys');
-require('./models/User');
 require('./models/Offer');
+require('./models/User');
 require('./services/passport');
 
 mongoose.connect(mongoURI);
