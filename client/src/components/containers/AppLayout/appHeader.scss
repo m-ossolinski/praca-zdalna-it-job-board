@@ -1,6 +1,7 @@
 .app-header {
-  display: grid;
-  grid-template-columns: 200px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
   &-nav {
     display: flex;
