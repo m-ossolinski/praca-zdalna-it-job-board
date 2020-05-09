@@ -28,3 +28,4 @@ export const sendNewOffer = (offerData) => async dispatch => {
     dispatch({ type: SEND_NEW_OFFER_FAILED });
   }
 }
+

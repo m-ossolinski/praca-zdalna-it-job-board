@@ -3,12 +3,13 @@ const mongoose = require('mongoose');
 const cookieSession = require('cookie-session');
 const passport = require('passport');
 const bodyParser = require('body-parser');
-const authRoutes = require('./routes/authenticationRoutes');
-const offerRoutes = require('./routes/offerRoutes');
-const { mongoURI, cookieKey } = require('./config/keys');
 require('./models/Offer');
 require('./models/User');
 require('./services/passport');
+const authRoutes = require('./routes/authenticationRoutes');
+const offerRoutes = require('./routes/offerRoutes');
+const { mongoURI, cookieKey } = require('./config/keys');
+
 
 mongoose.connect(mongoURI);
 
