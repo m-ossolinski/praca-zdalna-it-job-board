@@ -24,6 +24,16 @@ module.exports = app => {
   });
 
   app.get('/api/offer', async (req, res) => {
+    const offers = await Offer.find({});
 
+    res.send(offers);
   })
+
+  app.get('/api/surveys', requireLogin, async (req, res) => {
+    const surveys = await Survey.find({ _user: req.user.id }).select({
+      recipients: false,
+    });
+
+    res.send(surveys);
+  });
 }

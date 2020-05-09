@@ -5,6 +5,9 @@ import {
   FETCH_USER_SUCCESSFUL,
   SEND_NEW_OFFER,
   SEND_NEW_OFFER_FAILED,
+  FETCH_OFFERS,
+  FETCH_OFFERS_SUCCESS,
+  FETCH_OFFERS_FAILED,
 } from './actionTypes';
 
 export const fetchUser = () => async dispatch => {
@@ -29,3 +32,14 @@ export const sendNewOffer = (offerData) => async dispatch => {
   }
 }
 
+export const fetchOffers = () => async dispatch => {
+  dispatch({ type: FETCH_OFFERS });
+
+  try {
+    const { data } = await axios.get('/api/offer');
+
+    dispatch({ type: FETCH_OFFERS_SUCCESS, payload: data });
+   } catch (err) {
+    dispatch({ type: FETCH_OFFERS_FAILED });
+  }
+}
