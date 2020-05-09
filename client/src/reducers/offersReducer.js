@@ -5,8 +5,8 @@ import {
 } from '../actions/actionTypes';
 
 const initialState = {
-  fetchingData: false,
-  fetchingDataFailed: false,
+  offersLoading: true,
+  offersLoadingFailed: false,
   data: {},
 };
 
@@ -16,20 +16,20 @@ export default function(state = initialState, action) {
     case FETCH_OFFERS:
       return {
         ...initialState,
-        fetchingData: true,
+        offersLoading: true,
       }
 
     case FETCH_OFFERS_SUCCESS:
       return {
         ...initialState,
-        data: { ...action.payload },
-        fetchingData: false,
+        data: [...action.payload],
+        offersLoading: false,
       }
 
     case FETCH_OFFERS_FAILED:
       return {
         ...initialState,
-        fetchingDataFailed: true,
+        offersLoadingFailed: true,
       }
 
     default:

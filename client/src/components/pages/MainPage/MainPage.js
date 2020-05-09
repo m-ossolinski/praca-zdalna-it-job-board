@@ -5,6 +5,7 @@ import { AppHeader, AppLayout } from '../../containers/index';
 import { AppNavigation } from "../AppNavigation";
 import NewOfferForm from './NewOfferForm';
 import './mainPage.scss';
+import OffersList from "./OffersList";
 
 export const MainPage = () => {
   const dispatch = useDispatch();
@@ -17,6 +18,7 @@ export const MainPage = () => {
     <AppLayout>
       <AppHeader appNavigation={AppNavigation} />
       praca-zdalna.it - job board
+      <OffersList />
       <NewOfferForm />
     </AppLayout>
   )
