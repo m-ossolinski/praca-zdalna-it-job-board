@@ -35,27 +35,14 @@ export const sendNewOffer = (offerData) => async dispatch => {
   }
 }
 
-export const fetchOffers = () => async dispatch => {
-
+export const fetchOffers = (userOffers) => async dispatch => {
   dispatch({ type: FETCH_OFFERS });
 
   try {
-    const { data } = await axios.get('/api/offer');
+    const { data } = await axios.get('/api/offer', { params: { userOffers }});
 
     dispatch({ type: FETCH_OFFERS_SUCCESS, payload: data });
    } catch (err) {
     dispatch({ type: FETCH_OFFERS_FAILED });
-  }
-}
-
-export const fetchUserOffers = (userId) => async dispatch => {
-  dispatch({ type: FETCH_USER_OFFERS });
-
-  try {
-    const { data } = await axios.get('/api/user-offers', userId);
-
-    dispatch({ type: FETCH_USER_OFFERS_SUCCESS, payload: data });
-  } catch (err) {
-    dispatch({ type: FETCH_USER_OFFERS_FAILED });
   }
 }
