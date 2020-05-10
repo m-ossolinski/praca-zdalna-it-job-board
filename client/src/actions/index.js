@@ -8,7 +8,11 @@ import {
   FETCH_OFFERS,
   FETCH_OFFERS_SUCCESS,
   FETCH_OFFERS_FAILED,
+  FETCH_USER_OFFERS,
+  FETCH_USER_OFFERS_SUCCESS,
+  FETCH_USER_OFFERS_FAILED,
 } from './actionTypes';
+import {useSelector} from "react-redux";
 
 export const fetchUser = () => async dispatch => {
   dispatch({ type: FETCH_USER });
@@ -32,6 +36,7 @@ export const sendNewOffer = (offerData) => async dispatch => {
 }
 
 export const fetchOffers = () => async dispatch => {
+
   dispatch({ type: FETCH_OFFERS });
 
   try {
@@ -40,5 +45,17 @@ export const fetchOffers = () => async dispatch => {
     dispatch({ type: FETCH_OFFERS_SUCCESS, payload: data });
    } catch (err) {
     dispatch({ type: FETCH_OFFERS_FAILED });
+  }
+}
+
+export const fetchUserOffers = (userId) => async dispatch => {
+  dispatch({ type: FETCH_USER_OFFERS });
+
+  try {
+    const { data } = await axios.get('/api/user-offers', userId);
+
+    dispatch({ type: FETCH_USER_OFFERS_SUCCESS, payload: data });
+  } catch (err) {
+    dispatch({ type: FETCH_USER_OFFERS_FAILED });
   }
 }
