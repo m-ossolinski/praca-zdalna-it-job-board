@@ -3,6 +3,7 @@ import { AppHeader, AppLayout } from "../../containers/AppLayout";
 import { AppNavigation } from "../AppNavigation";
 import {useDispatch} from "react-redux";
 import {fetchOffers} from "../../../actions";
+import OffersList from "../../OfferComponents/OffersList";
 
 export const UserOffers = () => {
   const dispatch = useDispatch();
@@ -16,6 +17,7 @@ export const UserOffers = () => {
     <AppLayout>
       <AppHeader appNavigation={AppNavigation} />
        usr offers
+      <OffersList />
     </AppLayout>
   )
 };

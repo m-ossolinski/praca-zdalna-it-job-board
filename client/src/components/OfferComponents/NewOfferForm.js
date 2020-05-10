@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useForm } from 'react-hook-form';
-import { sendNewOffer } from '../../../actions';
+import { sendNewOffer } from '../../actions';
 
 const newOfferFormConfig = [{
   placeholder: 'Title',
