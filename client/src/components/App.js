@@ -1,6 +1,6 @@
-import React, { Fragment } from 'react';
-import { BrowserRouter } from 'react-router-dom';
-import { Routes } from '../routes';
+import React, { Fragment } from "react";
+import { BrowserRouter } from "react-router-dom";
+import { Routes } from "routes";
 
 export const App = () => {
   return (
@@ -9,7 +9,7 @@ export const App = () => {
         <Routes />
       </Fragment>
     </BrowserRouter>
-  )
-}
+  );
+};
 
 export default App;

@@ -1,5 +1,5 @@
-import React, { useContext } from 'react';
-import {AuthDataContext} from "../../../contexts/AuthContext";
+import React, { useContext } from "react";
+import { AuthDataContext } from "contexts/AuthContext";
 
 export const LoginLogoutPanel = () => {
   const { isUserLoggedIn } = useContext(AuthDataContext);
@@ -8,11 +8,11 @@ export const LoginLogoutPanel = () => {
     <div>
       {isUserLoggedIn ? (
         <a href="/api/logout">Logout</a>
-      ): (
+      ) : (
         <a href="/auth/google">Login with Google+</a>
       )}
     </div>
-  )
-}
+  );
+};
 
 export default { LoginLogoutPanel };
