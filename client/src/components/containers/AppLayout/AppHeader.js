@@ -1,7 +1,7 @@
-import React from 'react';
-import { LoginLogoutPanel } from '../../pages/AppNavigation/LoginLogoutPanel';
-import './appHeader.scss';
-import logo from '../../utils/logo.png';
+import React from "react";
+import { LoginLogoutPanel } from "components/pages/AppNavigation/LoginLogoutPanel";
+import logo from "components/utils/logo.png";
+import "./appHeader.scss";
 
 export const AppHeader = (props) => {
   const { appNavigation: AppNavigation } = props;
@@ -14,5 +14,5 @@ export const AppHeader = (props) => {
         <LoginLogoutPanel />
       </div>
     </header>
-  )
-}
+  );
+};

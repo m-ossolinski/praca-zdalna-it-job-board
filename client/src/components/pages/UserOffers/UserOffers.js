@@ -1,9 +1,9 @@
-import React, {useEffect} from 'react';
-import { AppHeader, AppLayout } from "../../containers/AppLayout";
-import { AppNavigation } from "../AppNavigation";
-import {useDispatch} from "react-redux";
-import {fetchOffers} from "../../../actions";
-import OffersList from "../../OfferComponents/OffersList";
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { AppHeader, AppLayout } from "components/containers/AppLayout";
+import { AppNavigation } from "components/pages/AppNavigation";
+import { fetchOffers } from "actions";
+import OffersList from "components/OfferComponents/OffersList";
 
 export const UserOffers = () => {
   const dispatch = useDispatch();
@@ -16,8 +16,8 @@ export const UserOffers = () => {
   return (
     <AppLayout>
       <AppHeader appNavigation={AppNavigation} />
-       usr offers
+      usr offers
       <OffersList />
     </AppLayout>
-  )
+  );
 };
