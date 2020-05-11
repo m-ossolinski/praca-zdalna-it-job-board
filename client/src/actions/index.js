@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from "axios";
 import {
   FETCH_USER,
   FETCH_USER_FAILED,
@@ -8,41 +8,53 @@ import {
   FETCH_OFFERS,
   FETCH_OFFERS_SUCCESS,
   FETCH_OFFERS_FAILED,
-  FETCH_USER_OFFERS,
-  FETCH_USER_OFFERS_SUCCESS,
-  FETCH_USER_OFFERS_FAILED,
-} from './actionTypes';
-import {useSelector} from "react-redux";
+  DELETE_OFFER,
+  DELETE_OFFER_SUCCESS,
+  DELETE_OFFER_FAILED,
+} from "./actionTypes";
 
-export const fetchUser = () => async dispatch => {
+export const fetchUser = () => async (dispatch) => {
   dispatch({ type: FETCH_USER });
 
   try {
-    const { data } = await axios.get('/api/current_user');
+    const { data } = await axios.get("/api/current_user");
 
     dispatch({ type: FETCH_USER_SUCCESSFUL, payload: data });
   } catch (err) {
-    dispatch({ type: FETCH_USER_FAILED })
+    dispatch({ type: FETCH_USER_FAILED });
   }
 };
 
-export const sendNewOffer = (offerData) => async dispatch => {
+export const sendNewOffer = (offerData) => async (dispatch) => {
   dispatch({ type: SEND_NEW_OFFER });
   try {
-    await axios.post('/api/offer', offerData);
+    await axios.post("/api/offer", offerData);
   } catch (err) {
     dispatch({ type: SEND_NEW_OFFER_FAILED });
   }
-}
+};
 
-export const fetchOffers = (userOffers) => async dispatch => {
+export const fetchOffers = (userOffers) => async (dispatch) => {
   dispatch({ type: FETCH_OFFERS });
 
   try {
-    const { data } = await axios.get('/api/offer', { params: { userOffers }});
+    const { data } = await axios.get("/api/offer", { params: { userOffers } });
 
     dispatch({ type: FETCH_OFFERS_SUCCESS, payload: data });
-   } catch (err) {
+  } catch (err) {
     dispatch({ type: FETCH_OFFERS_FAILED });
   }
-}
+};
+
+export const deleteOffer = (offerId) => async (dispatch) => {
+  const userOffers = true;
+  dispatch({ type: DELETE_OFFER });
+
+  try {
+    await axios.delete("/api/offer", { params: { offerId } });
+    dispatch({ type: DELETE_OFFER_SUCCESS });
+    dispatch(fetchOffers(userOffers));
+  } catch (err) {
+    dispatch({ type: DELETE_OFFER_FAILED });
+  }
+};

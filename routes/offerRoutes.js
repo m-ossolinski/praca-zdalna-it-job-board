@@ -1,10 +1,12 @@
-const mongoose = require('mongoose');
-const requireLogin = require('../middlewares/requireLogin');
+const mongoose = require("mongoose");
+const requireLogin = require("../middlewares/requireLogin");
 
-const Offer = mongoose.model('offers');
+const Offer = mongoose.model("offers");
 
-module.exports = app => {
-  app.post('/api/offer', requireLogin, async (req, res) => {
+const ObjectId = mongoose.Types.ObjectId;
+
+module.exports = (app) => {
+  app.post("/api/offer", requireLogin, async (req, res) => {
     const { title, company, description, requirements } = req.body;
 
     const offer = new Offer({
@@ -13,19 +15,19 @@ module.exports = app => {
       description,
       requirements,
       _user: req.user.id,
-      dateSent: Date.now()
+      dateSent: Date.now(),
     });
 
     try {
-      await offer.save()
+      await offer.save();
     } catch (err) {
       res.status(422).send(err);
     }
   });
 
-  app.get('/api/offer', async (req, res) => {
+  app.get("/api/offer", async (req, res) => {
     let offers;
-    console.log(req.query);
+
     if (req.query.userOffers) {
       offers = await Offer.find({ _user: req.user.id }).select();
     } else {
@@ -33,5 +35,14 @@ module.exports = app => {
     }
 
     res.send(offers);
-  })
-}
+  });
+
+  app.delete("/api/offer", async (req, res) => {
+    try {
+      const response = await Offer.deleteOne({ _id: req.query.offerId });
+      res.send(response).status(200);
+    } catch (err) {
+      res.status(422).send(err);
+    }
+  });
+};

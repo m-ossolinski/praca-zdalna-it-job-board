@@ -1,9 +1,16 @@
 import React from "react";
+import { deleteOffer } from "../../actions";
+import { useDispatch } from "react-redux";
 
 export const Offer = (props) => {
   const {
-    offerData: { title, description, company, requirements },
+    offerData: { title, description, company, requirements, _id },
+    isAvailableToDeleteOffer,
   } = props;
+
+  const dispatch = useDispatch();
+
+  console.log(_id);
 
   return (
     <div
@@ -15,6 +22,7 @@ export const Offer = (props) => {
       <div>
         wymagania
         <span>{requirements}</span>
+        <button onClick={() => dispatch(deleteOffer(_id))}>Delete</button>
       </div>
     </div>
   );
