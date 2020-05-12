@@ -22,6 +22,7 @@ export default function (state = initialState, action) {
       return {
         ...initialState,
         offerDetails: action.payload,
+        offerDetailsLoading: false,
       };
 
     case FETCH_OFFER_DETAILS_FAILED:
