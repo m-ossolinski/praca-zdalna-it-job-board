@@ -2,9 +2,6 @@ import {
   FETCH_OFFERS,
   FETCH_OFFERS_SUCCESS,
   FETCH_OFFERS_FAILED,
-  DELETE_OFFER,
-  DELETE_OFFER_SUCCESS,
-  DELETE_OFFER_FAILED,
 } from "../actions/actionTypes";
 
 const initialState = {

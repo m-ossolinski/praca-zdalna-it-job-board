@@ -5,8 +5,6 @@ import Offer from "./Offer";
 export const OffersList = (props) => {
   const { isAvailableToDeleteOffer } = props;
 
-  console.log(isAvailableToDeleteOffer, "isAvailableToDeleteOffer");
-
   const { offersLoading, offersLoadingFailed, data } = useSelector(
     (state) => state.offers
   );
@@ -18,7 +16,10 @@ export const OffersList = (props) => {
       ) : (
         data &&
         data.map((offer) => (
-          <Offer offerData={offer} isAvailableToDeleteOffer />
+          <Offer
+            offerData={offer}
+            isAvailableToDeleteOffer={isAvailableToDeleteOffer}
+          />
         ))
       )}
       {offersLoadingFailed && (

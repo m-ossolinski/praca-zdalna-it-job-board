@@ -3,8 +3,6 @@ const requireLogin = require("../middlewares/requireLogin");
 
 const Offer = mongoose.model("offers");
 
-const ObjectId = mongoose.Types.ObjectId;
-
 module.exports = (app) => {
   app.post("/api/offer", requireLogin, async (req, res) => {
     const { title, company, description, requirements } = req.body;
@@ -40,6 +38,15 @@ module.exports = (app) => {
   app.delete("/api/offer", async (req, res) => {
     try {
       const response = await Offer.deleteOne({ _id: req.query.offerId });
+      res.send(response).status(200);
+    } catch (err) {
+      res.status(422).send(err);
+    }
+  });
+
+  app.get("/api/offer/:offerId", async (req, res) => {
+    try {
+      const response = await Offer.findById({ _id: req.params.offerId });
       res.send(response).status(200);
     } catch (err) {
       res.status(422).send(err);
