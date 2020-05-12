@@ -1,5 +1,10 @@
-import React, { Fragment } from 'react';
-import { MainPageRoute, NewOfferPageRoute, UserOffersRoute } from '../components/pages';
+import React, { Fragment } from "react";
+import {
+  MainPageRoute,
+  NewOfferPageRoute,
+  UserOffersRoute,
+  OfferDetailsPageRoute,
+} from "../components/pages";
 
 export const Routes = () => {
   return (
@@ -7,6 +12,7 @@ export const Routes = () => {
       <MainPageRoute />
       <NewOfferPageRoute />
       <UserOffersRoute />
+      <OfferDetailsPageRoute />
     </Fragment>
   );
 };

@@ -11,7 +11,11 @@ import {
   DELETE_OFFER,
   DELETE_OFFER_SUCCESS,
   DELETE_OFFER_FAILED,
+  FETCH_OFFER_DETAILS,
+  FETCH_OFFER_DETAILS_SUCCESS,
+  FETCH_OFFER_DETAILS_FAILED,
 } from "./actionTypes";
+import { offerDetailsPagePath } from "components/pages/OfferDetailsPage";
 
 export const fetchUser = () => async (dispatch) => {
   dispatch({ type: FETCH_USER });
@@ -56,5 +60,20 @@ export const deleteOffer = (offerId) => async (dispatch) => {
     dispatch(fetchOffers(userOffers));
   } catch (err) {
     dispatch({ type: DELETE_OFFER_FAILED });
+  }
+};
+
+export const fetchOfferDetails = (offerId, history) => async (dispatch) => {
+  dispatch({ type: FETCH_OFFER_DETAILS });
+  const url = "/api/offer/:offerId";
+
+  try {
+    const { data } = await axios.get(url.replace(":offerId", offerId));
+
+    dispatch({ type: FETCH_OFFER_DETAILS_SUCCESS, payload: data });
+
+    history.push(offerDetailsPagePath.replace(":offerId", offerId));
+  } catch (err) {
+    dispatch({ type: FETCH_OFFER_DETAILS_FAILED });
   }
 };

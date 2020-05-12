@@ -1,16 +1,16 @@
 import React from "react";
-import { deleteOffer } from "../../actions";
+import { deleteOffer, fetchOfferDetails } from "../../actions";
 import { useDispatch } from "react-redux";
+import { withRouter } from "react-router-dom";
 
 export const Offer = (props) => {
   const {
     offerData: { title, description, company, requirements, _id },
     isAvailableToDeleteOffer,
+    history,
   } = props;
 
   const dispatch = useDispatch();
-
-  console.log(_id);
 
   return (
     <div
@@ -22,10 +22,15 @@ export const Offer = (props) => {
       <div>
         wymagania
         <span>{requirements}</span>
-        <button onClick={() => dispatch(deleteOffer(_id))}>Delete</button>
+        {isAvailableToDeleteOffer && (
+          <button onClick={() => dispatch(deleteOffer(_id))}>Delete</button>
+        )}
+        <button onClick={() => dispatch(fetchOfferDetails(_id, history))}>
+          Detale
+        </button>
       </div>
     </div>
   );
 };
 
-export default Offer;
+export default withRouter(Offer);
