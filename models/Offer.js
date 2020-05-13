@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const offerSchema = new Schema({
@@ -6,8 +6,9 @@ const offerSchema = new Schema({
   company: String,
   description: String,
   requirements: String,
-  _user: { type: Schema.Types.ObjectId, ref: 'User' },
+  companyDescription: String,
+  _user: { type: Schema.Types.ObjectId, ref: "User" },
   dataSent: Date,
 });
 
-mongoose.model('offers', offerSchema);
+mongoose.model("offers", offerSchema);
