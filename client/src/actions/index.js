@@ -29,10 +29,11 @@ export const fetchUser = () => async (dispatch) => {
   }
 };
 
-export const sendNewOffer = (offerData) => async (dispatch) => {
+export const sendNewOffer = (offerData, history) => async (dispatch) => {
   dispatch({ type: SEND_NEW_OFFER });
   try {
     await axios.post("/api/offer", offerData);
+    history.push("/");
   } catch (err) {
     dispatch({ type: SEND_NEW_OFFER_FAILED });
   }

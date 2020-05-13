@@ -5,13 +5,20 @@ const Offer = mongoose.model("offers");
 
 module.exports = (app) => {
   app.post("/api/offer", requireLogin, async (req, res) => {
-    const { title, company, description, requirements } = req.body;
+    const {
+      title,
+      company,
+      description,
+      requirements,
+      companyDescription,
+    } = req.body;
 
     const offer = new Offer({
       title,
       company,
       description,
       requirements,
+      companyDescription,
       _user: req.user.id,
       dateSent: Date.now(),
     });
