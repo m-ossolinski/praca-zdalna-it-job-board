@@ -1,0 +1,29 @@
+.new-offer-form {
+  display: flex;
+  justify-content: center;
+
+  &__input {
+    width: 400px;
+  }
+
+  &__error-msg {
+    display: block;
+    padding: 4px 14px;
+    margin: 2px 0 4px 0;
+    color: red;
+  }
+
+  &__submit-btn {
+    padding: 10px;
+    width: 435px;
+    margin: 0 8px;
+  }
+
+  &__description, &__companyDescription, &__requirements {
+    min-height: 200px;
+    min-width: 600px;
+    resize: none;
+    font-family: inherit;
+    font-size: 14px;
+  }
+}
