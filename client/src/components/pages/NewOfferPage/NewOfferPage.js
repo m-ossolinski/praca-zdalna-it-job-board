@@ -5,8 +5,7 @@ import NewOfferForm from "components/OfferComponents/NewOfferForm";
 
 export const NewOfferPage = () => {
   return (
-    <AppLayout>
-      <AppHeader appNavigation={AppNavigation} />
+    <AppLayout appHeader={() => <AppHeader appNavigation={AppNavigation} />}>
       new offer page
       <NewOfferForm />
     </AppLayout>

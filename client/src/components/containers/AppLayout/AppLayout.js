@@ -1,12 +1,13 @@
-import React from 'react';
-import './appLayout.scss';
+import React from "react";
+import "./appLayout.scss";
 
 export const AppLayout = (props) => {
-  const { children } = props;
+  const { children, appHeader: AppHeader } = props;
 
   return (
-    <section className="app-layout">
-      {children}
-    </section>
-  )
-}
+    <main>
+      <AppHeader />
+      <section className="app-layout">{children}</section>
+    </main>
+  );
+};

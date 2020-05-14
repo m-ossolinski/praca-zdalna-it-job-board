@@ -14,8 +14,7 @@ export const UserOffers = () => {
   }, []);
 
   return (
-    <AppLayout>
-      <AppHeader appNavigation={AppNavigation} />
+    <AppLayout appHeader={() => <AppHeader appNavigation={AppNavigation} />}>
       usr offers
       <OffersList isAvailableToDeleteOffer />
     </AppLayout>

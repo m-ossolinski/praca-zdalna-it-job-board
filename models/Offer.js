@@ -7,6 +7,7 @@ const offerSchema = new Schema({
   description: String,
   requirements: String,
   companyDescription: String,
+  jobLocalization: String,
   _user: { type: Schema.Types.ObjectId, ref: "User" },
   dataSent: Date,
 });

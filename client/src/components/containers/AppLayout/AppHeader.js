@@ -1,6 +1,6 @@
 import React from "react";
 import { LoginLogoutPanel } from "components/pages/AppNavigation/LoginLogoutPanel";
-import logo from "components/utils/logo.png";
+import { Link } from "react-router-dom";
 import "./appHeader.scss";
 
 export const AppHeader = (props) => {
@@ -8,7 +8,9 @@ export const AppHeader = (props) => {
 
   return (
     <header className="app-header">
-      <img src={logo} alt="app-logo" />
+      <Link className="app-header__title" to="/">
+        <h2>PracaZdalna.IT</h2>
+      </Link>
       <div className="app-header-nav">
         <AppNavigation />
         <LoginLogoutPanel />

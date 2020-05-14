@@ -1,21 +1,26 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./appNavigation.scss";
-
-const appNavigationConfig = [
-  { id: "offers", path: "/", title: "Oferty pracy" },
-  { id: "postOffer", path: "/post-a-job", title: "Dodaj ogłoszenie" },
-  { id: "myOffers", path: "/my-offers", title: "Twoje ogłoszenia" },
-];
+import { useSelector } from "react-redux";
 
 export const AppNavigation = () => {
+  const { isUserLoggedIn } = useSelector((state) => state.auth);
+  const requiredUserLogin = true;
+  console.log(requiredUserLogin && isUserLoggedIn, "useruser");
+
   return (
     <nav className="app-navigation">
-      {appNavigationConfig.map(({ path, id, title }) => (
-        <Link key={id} to={path} className="app-navigation-item">
-          {title}
+      <Link to="/" className="app-navigation-item">
+        Oferty pracy
+      </Link>
+      <Link to="/post-a-job" className="app-navigation-item">
+        Dodaj ogłoszenie
+      </Link>
+      {isUserLoggedIn && (
+        <Link to="/my-offers" className="app-navigation-item">
+          Twoje ogłoszenia
         </Link>
-      ))}
+      )}
     </nav>
   );
 };

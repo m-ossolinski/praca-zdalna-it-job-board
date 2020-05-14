@@ -5,8 +5,7 @@ import { OfferDetails } from "./OfferDetails";
 
 export const OfferDetailsPage = () => {
   return (
-    <AppLayout>
-      <AppHeader appNavigation={AppNavigation} />
+    <AppLayout appHeader={() => <AppHeader appNavigation={AppNavigation} />}>
       offer details page
       <OfferDetails />
     </AppLayout>

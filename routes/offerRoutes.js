@@ -11,6 +11,7 @@ module.exports = (app) => {
       description,
       requirements,
       companyDescription,
+      jobLocalization,
     } = req.body;
 
     const offer = new Offer({
@@ -19,6 +20,7 @@ module.exports = (app) => {
       description,
       requirements,
       companyDescription,
+      jobLocalization,
       _user: req.user.id,
       dateSent: Date.now(),
     });

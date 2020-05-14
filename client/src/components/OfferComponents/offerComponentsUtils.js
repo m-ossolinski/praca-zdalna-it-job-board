@@ -18,6 +18,15 @@ export const newOfferFormConfig = [
     errorMsg: "Nazwa firmy jest wymagana.",
   },
   {
+    placeholder: "Lokalizacja firmy",
+    name: "jobLocalization",
+    options: {
+      min: 8,
+    },
+    errorMsg: "Lokalizacja jest wymagana.",
+    type: "text",
+  },
+  {
     placeholder: "Opis stanowiska",
     name: "description",
     options: {

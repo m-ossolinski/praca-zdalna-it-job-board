@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import Offer from "./Offer";
+import "./offersList.scss";
 
 export const OffersList = (props) => {
   const { isAvailableToDeleteOffer } = props;
@@ -10,7 +11,7 @@ export const OffersList = (props) => {
   );
 
   return (
-    <div>
+    <div className="offers-list">
       {offersLoading ? (
         <div>Loading...</div>
       ) : (

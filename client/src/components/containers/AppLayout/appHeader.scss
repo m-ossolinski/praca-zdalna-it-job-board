@@ -2,7 +2,16 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background: #1A2C48;
+  padding: 20px 90px;
 
+  &__title {
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-underline: none;
+  }
+  
   &-nav {
     display: flex;
     justify-self: flex-end;
