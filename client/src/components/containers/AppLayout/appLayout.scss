@@ -1,5 +1,6 @@
 .app-layout {
   padding: 40px 240px;
-  height: 100vh;
+  height: calc(100vh - 190px);
   background: #D8DBD3;
+  overflow-y: scroll;
 }

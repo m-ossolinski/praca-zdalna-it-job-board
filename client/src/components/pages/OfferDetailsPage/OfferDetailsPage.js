@@ -1,6 +1,6 @@
 import React from "react";
 import { AppHeader, AppLayout } from "components/containers/AppLayout";
-import { AppNavigation } from "components/pages/AppNavigation";
+import { AppNavigation } from "components/containers/AppNavigation";
 import { OfferDetails } from "./OfferDetails";
 
 export const OfferDetailsPage = () => {

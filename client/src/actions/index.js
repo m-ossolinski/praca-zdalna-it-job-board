@@ -69,9 +69,9 @@ export const fetchOfferDetails = (offerId, history) => async (dispatch) => {
   const url = "/api/offer/:offerId";
 
   try {
-    const { data } = await axios.get(url.replace(":offerId", offerId));
+    const response = await axios.get(url.replace(":offerId", offerId));
 
-    dispatch({ type: FETCH_OFFER_DETAILS_SUCCESS, payload: data });
+    dispatch({ type: FETCH_OFFER_DETAILS_SUCCESS, payload: response.data });
 
     history.push(offerDetailsPagePath.replace(":offerId", offerId));
   } catch (err) {

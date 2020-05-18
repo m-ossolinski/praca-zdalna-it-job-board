@@ -1,5 +1,5 @@
 import React from "react";
-import { LoginLogoutPanel } from "components/pages/AppNavigation/LoginLogoutPanel";
+import { LoginLogoutPanel } from "components/containers/AppNavigation/LoginLogoutPanel";
 import { Link } from "react-router-dom";
 import "./appHeader.scss";
 
