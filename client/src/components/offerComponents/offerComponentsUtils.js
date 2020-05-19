@@ -18,6 +18,33 @@ export const newOfferFormConfig = [
     errorMsg: "Nazwa firmy jest wymagana.",
   },
   {
+    placeholder: "Adres",
+    name: "jobLocalization",
+    options: {
+      min: 8,
+    },
+    errorMsg: "Lokalizacja jest wymagana.",
+    type: "text",
+  },
+  {
+    placeholder: "E-mail",
+    name: "email",
+    options: {
+      min: 8,
+    },
+    errorMsg: "E-mail jest wymagany",
+    type: "text",
+  },
+  {
+    placeholder: "Telefon kontaktowy",
+    name: "phone",
+    options: {
+      min: 8,
+    },
+    errorMsg: "Telefon kontaktowy jest wymagany",
+    type: "number",
+  },
+  {
     placeholder: "Opis stanowiska",
     name: "description",
     options: {

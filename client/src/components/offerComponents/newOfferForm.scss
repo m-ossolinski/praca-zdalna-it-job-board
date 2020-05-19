@@ -1,9 +1,11 @@
 .new-offer-form {
   display: flex;
   justify-content: center;
+  padding: 50px 0;
 
   &__input {
-    width: 400px;
+    width: 600px;
+    line-height: normal;
   }
 
   &__error-msg {
@@ -14,13 +16,17 @@
   }
 
   &__submit-btn {
+    border: none;
     padding: 10px;
-    width: 435px;
+    width: 633px;
+    background: limegreen;
+    color: white;
+    font-size: 20px;
     margin: 0 8px;
   }
 
   &__description, &__companyDescription, &__requirements {
-    min-height: 200px;
+    min-height: 60px;
     min-width: 600px;
     resize: none;
     font-family: inherit;

@@ -11,6 +11,9 @@ module.exports = (app) => {
       description,
       requirements,
       companyDescription,
+      jobLocalization,
+      email,
+      phone,
     } = req.body;
 
     const offer = new Offer({
@@ -19,6 +22,9 @@ module.exports = (app) => {
       description,
       requirements,
       companyDescription,
+      jobLocalization,
+      email,
+      phone,
       _user: req.user.id,
       dateSent: Date.now(),
     });
@@ -26,6 +32,7 @@ module.exports = (app) => {
     try {
       await offer.save();
     } catch (err) {
+      console.log(err);
       res.status(422).send(err);
     }
   });

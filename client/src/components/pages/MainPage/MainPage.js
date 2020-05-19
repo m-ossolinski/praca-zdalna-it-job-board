@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { fetchOffers } from "actions";
 import { AppHeader, AppLayout } from "components/containers";
-import { AppNavigation } from "../AppNavigation";
-import OffersList from "../../OfferComponents/OffersList";
+import { AppNavigation } from "../../containers/AppNavigation";
+import OffersList from "../../offerComponents/OffersList";
 import "./mainPage.scss";
 
 export const MainPage = () => {
@@ -14,9 +14,8 @@ export const MainPage = () => {
   }, []);
 
   return (
-    <AppLayout>
-      <AppHeader appNavigation={AppNavigation} />
-      praca-zdalna.it - job board
+    <AppLayout appHeader={() => <AppHeader appNavigation={AppNavigation} />}>
+      <h2>Lista ofert pracy</h2>
       <OffersList />
     </AppLayout>
   );

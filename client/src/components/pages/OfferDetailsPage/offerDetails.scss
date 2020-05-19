@@ -1,0 +1,43 @@
+.offer-details {
+
+  &__header {
+    align-items: end;
+    justify-content: space-between;
+    display: flex;
+    background: #5588B1;
+    padding: 0 24px;
+
+    &-title {
+      text-transform: uppercase;
+    }
+
+    &-localization {
+
+    }
+  }
+
+  &__info {
+    background: #92abbc;
+
+    &-title {
+      font-weight: bold;
+      display: block;
+      border-bottom: 2px solid black;
+      padding: 4px 6px;
+      margin: 0;
+    }
+
+    &-section {
+      padding: 3px;
+    }
+
+    &-description,
+    &-requirements,
+    &-company-description {
+      font-family: inherit;
+      font-size: 16px;
+      white-space: pre-wrap;
+      padding: 4px 8px;
+    }
+  }
+}

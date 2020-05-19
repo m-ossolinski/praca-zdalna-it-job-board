@@ -1,0 +1,35 @@
+.app-navigation {
+  justify-content: flex-end;
+  align-content: center;
+
+  &-item {
+    background: #5588B1;
+    color: #fff;
+    padding: 14px;
+    margin: 0 6px;
+    text-decoration: none;
+  }
+}
+
+.login-logout-panel {
+  min-width: 200px;
+  margin-right: 120px;
+  margin-left: 12px;
+  color: #fff;
+
+  &-btn-logout, &-btn-login {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 14px 20px;
+    background: #fff;
+  }
+
+  &-btn-logout {
+    background: red;
+  }
+
+  &-btn-login {
+    background: forestgreen;
+  }
+}

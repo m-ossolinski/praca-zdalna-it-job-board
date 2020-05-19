@@ -5,11 +5,15 @@ export const LoginLogoutPanel = () => {
   const { isUserLoggedIn } = useContext(AuthDataContext);
 
   return (
-    <div>
+    <div className="login-logout-panel">
       {isUserLoggedIn ? (
-        <a href="/api/logout">Logout</a>
+        <a className="login-logout-panel-btn-logout" href="/api/logout">
+          Wyloguj
+        </a>
       ) : (
-        <a href="/auth/google">Login with Google+</a>
+        <a className="login-logout-panel-btn-login" href="/auth/google">
+          Zaloguj
+        </a>
       )}
     </div>
   );
