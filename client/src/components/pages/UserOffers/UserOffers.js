@@ -15,7 +15,7 @@ export const UserOffers = () => {
 
   return (
     <AppLayout appHeader={() => <AppHeader appNavigation={AppNavigation} />}>
-      usr offers
+      <h2>Twoje ogłoszenia</h2>
       <OffersList isAvailableToDeleteOffer />
     </AppLayout>
   );

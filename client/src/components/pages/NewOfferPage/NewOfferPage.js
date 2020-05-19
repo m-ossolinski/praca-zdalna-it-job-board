@@ -6,7 +6,9 @@ import NewOfferForm from "components/offerComponents/NewOfferForm";
 export const NewOfferPage = () => {
   return (
     <AppLayout appHeader={() => <AppHeader appNavigation={AppNavigation} />}>
-      new offer page
+      <h2 style={{ padding: 0, margin: 0 }}>
+        Dodaj nową ofertę poprzez poniższy formularz
+      </h2>
       <NewOfferForm />
     </AppLayout>
   );

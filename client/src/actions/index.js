@@ -30,6 +30,7 @@ export const fetchUser = () => async (dispatch) => {
 };
 
 export const sendNewOffer = (offerData, history) => async (dispatch) => {
+  console.log(offerData, "offerDataofferData");
   dispatch({ type: SEND_NEW_OFFER });
   try {
     await axios.post("/api/offer", offerData);

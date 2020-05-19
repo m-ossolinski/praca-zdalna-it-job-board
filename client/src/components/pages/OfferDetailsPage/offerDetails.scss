@@ -17,13 +17,18 @@
   }
 
   &__info {
+    background: #92abbc;
 
     &-title {
       font-weight: bold;
-
-      margin: 6px 0;
       display: block;
       border-bottom: 2px solid black;
+      padding: 4px 6px;
+      margin: 0;
+    }
+
+    &-section {
+      padding: 3px;
     }
 
     &-description,

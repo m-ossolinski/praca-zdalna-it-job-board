@@ -10,6 +10,8 @@ export const OfferDetails = () => {
       jobLocalization,
       requirements,
       companyDescription,
+      phone,
+      email,
     },
     offerDetailsLoading,
     offerDetails,
@@ -31,21 +33,27 @@ export const OfferDetails = () => {
             <span className="offer-details__header-localization">
               <p>{jobLocalization}</p>
             </span>
+            r
+            <span>
+              <p className="offer-details__info-title">Kontakt:</p>
+              <p>{phone}</p>
+              <p>{email}</p>
+            </span>
           </div>
           <div className="offer-details__info">
-            <span>
+            <span className="offer-details__info-section">
               <p className="offer-details__info-title">Opis:</p>
               <pre className="offer-details__info-description">
                 {description}
               </pre>
             </span>
-            <span>
+            <span className="offer-details__info-section">
               <p className="offer-details__info-title">Wymagania:</p>
               <pre className="offer-details__info-requirements">
                 {requirements}
               </pre>
             </span>
-            <span>
+            <span className="offer-details__info-section">
               <p className="offer-details__info-title">O firmie:</p>
               <pre className="offer-details__info-company-description">
                 {companyDescription}

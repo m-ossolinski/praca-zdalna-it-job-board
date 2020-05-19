@@ -15,7 +15,7 @@ export const MainPage = () => {
 
   return (
     <AppLayout appHeader={() => <AppHeader appNavigation={AppNavigation} />}>
-      praca-zdalna.it - job board
+      <h2>Lista ofert pracy</h2>
       <OffersList />
     </AppLayout>
   );
