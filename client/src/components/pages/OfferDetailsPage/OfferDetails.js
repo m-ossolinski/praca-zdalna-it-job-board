@@ -31,9 +31,9 @@ export const OfferDetails = () => {
               <p>{company}</p>
             </span>
             <span className="offer-details__header-localization">
-              <p>{jobLocalization}</p>
+              <p>{jobLocalization}</p>us
             </span>
-            r
+
             <span>
               <p className="offer-details__info-title">Kontakt:</p>
               <p>{phone}</p>
